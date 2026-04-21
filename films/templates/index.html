@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block titre %}
+Liste des films
+{% endblock titre %}
+
+{% block content %}
+    <table class="table table-bordered table-hover">
+        <tr>
+            <th>Titre</th>
+            <th>Date Sortie</th>
+            <th>Catégorie</th>
+        </tr>
+        {% for film in films %}
+        <tr>
+            <td> <a href="/films/{{film.id}}/">{{film.title}}</a></td>
+            
+            <td>{{film.date_sortie}}</td>
+            <td>{{film.categorie}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock content %}

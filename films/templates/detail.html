@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block titre %}
+Détails du film
+{% endblock titre %}
+
+{% block content %}
+    <h2>Détails du film</h2>
+    <table class="table table-bordered table-hover mt-3">
+        <thead class="table-light">
+            <tr>
+                <th>Titre</th>
+                <th>Date Sortie</th>
+                <th>Catégorie</th>
+                <th>Prix de location</th>
+                <th>Quantité en stock</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{film.title}}</td>
+                <td>{{film.date_sortie}}</td>
+                <td>{{film.categorie}}</td>
+                <td>{{film.prix_location}} MAD</td>
+                <td>{{film.qte_stock}}</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <a href="/films/" class="btn btn-secondary mt-3">Retour à la liste</a>
+
+{% endblock content %}
