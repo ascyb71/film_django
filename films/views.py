@@ -13,4 +13,4 @@ def index(request):
 def detail(request, film_id):
     # film = Film.objects.get(id=film_id) # The simple way
     film = get_object_or_404(Film, id=film_id) # The safe way (handles 404)
-    return render(request, "films/detail.html", {"film": film})
+    return render(request, "detail.html", {"film": film})
