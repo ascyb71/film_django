@@ -22,4 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('films/', include("films.urls")),
     path('', views.home), # <--- Demande à Django d'afficher la fonction home
+    path("acteurs/", include('acteurs.urls')),
 ]
