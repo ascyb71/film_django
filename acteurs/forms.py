@@ -1,9 +1,9 @@
 from django import forms
 
 class GestionActeurs(forms.Form):
-    nom = forms.CharField(label='Nom ',max_length=50,widget=forms.TextInput(attrs={'style': 'display: block; marginbottom: 10px;'}))
-    email1 = forms.EmailField(label="Tapez votre email ",max_length=100,widget=forms.EmailInput(attrs={'style': 'display: block;margin-bottom: 10px;'}))
-    email2 = forms.EmailField(label="ReTapez votre email ", max_length=100,widget=forms.EmailInput(attrs={'style': 'display: block; margin-bottom:10px;'}))
+    nom = forms.CharField(label='Nom ',max_length=50,widget=forms.TextInput(attrs={'style': 'display: block; margin-bottom: 10px;'}))
+    email1 = forms.EmailField(label="Tapez votre email ",max_length=100,widget=forms.EmailInput(attrs={'style': 'display: block; margin-bottom: 10px;'}))
+    email2 = forms.EmailField(label="ReTapez votre email ", max_length=100,widget=forms.EmailInput(attrs={'style': 'display: block; margin-bottom: 10px;'}))
 
     def clean(self):
         cleaned_data = self.cleaned_data
@@ -14,5 +14,5 @@ class GestionActeurs(forms.Form):
         if email2 and email2.endswith("gmail.com"):
                 self.add_error('email2', 'Adresse gmail non acceptée')
         if email1 and email2 and email1 != email2:
-                raise forms.ValidationError("Les adresses e-mail doiventcorrespondre.")
+                raise forms.ValidationError("Les adresses e-mail doivent correspondre.")
         return cleaned_data
